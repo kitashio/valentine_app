@@ -1,15 +1,9 @@
-
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 
-class ResultPage extends StatefulWidget {
+class ResultPage extends StatelessWidget{
+  get math => null;
 
-  @override
-  State<ResultPage> createState() => _ResultPageState();
-}
-
-class _ResultPageState extends State<ResultPage> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +15,8 @@ class _ResultPageState extends State<ResultPage> with SingleTickerProviderStateM
       'images/taiyakiyade.png',
       'images/tomochocoyade.png',
     ];
-    _nowword = words[Random().nextInt(words.length)];
+    var r = new Random(new DateTime.now().millisecondsSinceEpoch);
+    _nowword = words[r.nextInt(words.length)];
 
     return Scaffold(
       appBar: AppBar(

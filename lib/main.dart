@@ -52,54 +52,54 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
   @override
   Widget build(BuildContext context) {
 
-
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Happy Valentine!'),
       ),
       body:Container(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Stack(
-                alignment: Alignment.topCenter,
-                children: [
-                  SizedBox(
-                    width: 260,
-                    height: 260,
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 30),
-                      child: Roulette(
-                        controller: _controller,
-                        style: const RouletteStyle(
-                          dividerThickness: 4,
-                        ),
+        alignment: Alignment.center,
+        child: Column(
+          children: [
+            SizedBox(height: 20),
+            Image.asset('images/valentine_title.png',
+            height: 150,),
+            SizedBox(height: 20),
+            Stack(
+              alignment: Alignment.topCenter,
+              children: [
+                SizedBox(
+                  width: 260,
+                  height: 260,
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 30),
+                    child: Roulette(
+                      controller: _controller,
+                      style: const RouletteStyle(
+                        dividerThickness: 4,
                       ),
                     ),
                   ),
-                ],
-              ),
-              SizedBox(height: 20),
-              ElevatedButton(
-                  onPressed: () async {
-                    await _controller.rollTo(
-                      2,
-                      clockwise: _clockwise,
-                      offset: Random().nextDouble(),
-                    );
-                     Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) {
-                        return ResultPage();
-                      }),
-                    );
-                  } ,
-                  child: Text("受け取ってね"))
-            ],
-          ),
+                ),
+              ],
+            ),
+            SizedBox(height: 50),
+            ElevatedButton(
+                onPressed: () async {
+                  await _controller.rollTo(
+                    2,
+                    clockwise: _clockwise,
+                    offset: Random().nextDouble(),
+                  );
+                   Navigator.push(
+                       context,
+                       MaterialPageRoute(builder: (context) => ResultPage(),
+                       )
+                  );
+                } ,
+                child: Text("受け取ってね！",
+                ),
+            ),
+          ],
         ),
       ),
     );
