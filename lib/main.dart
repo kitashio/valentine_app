@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Roulette',
+      title: 'はっぴーばれんたいん',
       theme: ThemeData(
         primarySwatch: Colors.brown,
       ),
@@ -56,50 +56,54 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       appBar: AppBar(
         title: const Text('Happy Valentine!'),
       ),
-      body:Container(
-        alignment: Alignment.center,
-        child: Column(
-          children: [
-            SizedBox(height: 20),
-            Image.asset('images/valentine_title.png',
-            height: 150,),
-            SizedBox(height: 20),
-            Stack(
-              alignment: Alignment.topCenter,
-              children: [
-                SizedBox(
-                  width: 260,
-                  height: 260,
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 30),
-                    child: Roulette(
-                      controller: _controller,
-                      style: const RouletteStyle(
-                        dividerThickness: 4,
+      body: SingleChildScrollView(
+        child: Container(
+          alignment: Alignment.center,
+          child: Column(
+            children: [
+              SizedBox(height: 20),
+              Image.asset('images/valentine_title.png',
+              height: 150,),
+              SizedBox(height: 20),
+              Stack(
+                alignment: Alignment.topCenter,
+                children: [
+                  SizedBox(
+                    width: 260,
+                    height: 260,
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 30),
+                      child: Roulette(
+                        controller: _controller,
+                        style: const RouletteStyle(
+                          dividerThickness: 4,
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ],
-            ),
-            SizedBox(height: 50),
-            ElevatedButton(
-                onPressed: () async {
-                  await _controller.rollTo(
-                    2,
-                    clockwise: _clockwise,
-                    offset: Random().nextDouble(),
-                  );
-                   Navigator.push(
-                       context,
-                       MaterialPageRoute(builder: (context) => ResultPage(),
-                       )
-                  );
-                } ,
-                child: Text("受け取ってね！",
-                ),
-            ),
-          ],
+                ],
+              ),
+              SizedBox(height: 50),
+              ElevatedButton(
+                  onPressed: () async {
+                    await _controller.rollTo(
+                      2,
+                      clockwise: _clockwise,
+                      offset: Random().nextDouble(),
+                    );
+                     Navigator.push(
+                         context,
+                         MaterialPageRoute(builder: (context) => ResultPage(),
+                         )
+                    );
+                  } ,
+                  child: Text("受け取ってね！",
+                  ),
+              ),
+              SizedBox(height: 200),
+              Text('なにがでるかな'),
+            ],
+          ),
         ),
       ),
     );
