@@ -2,8 +2,9 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class ResultPage extends StatelessWidget{
-  get math => null;
+  const ResultPage({Key? key}) : super(key: key);
 
+  get math => null;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class ResultPage extends StatelessWidget{
       'images/taiyakiyade.png',
       'images/tomochocoyade.png',
     ];
-    var r = new Random(new DateTime.now().millisecondsSinceEpoch);
+    var r = Random(DateTime.now().millisecondsSinceEpoch);
     _nowword = words[r.nextInt(words.length)];
 
     return Scaffold(
@@ -28,7 +29,7 @@ class ResultPage extends StatelessWidget{
             Image.asset(_nowword,
             height: 300,
             width: 300,),
-            Text('だよ！',
+            const Text('だよ！',
             style: TextStyle(
               fontSize: 50,
             ),

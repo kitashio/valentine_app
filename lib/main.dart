@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:roulette/roulette.dart';
 import 'package:valentine_app/result_page.dart';
@@ -32,7 +31,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
   late RouletteController _controller;
-  bool _clockwise = true;
+  final bool _clockwise = true;
 
   @override
   void initState() {
@@ -61,10 +60,10 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           alignment: Alignment.center,
           child: Column(
             children: [
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Image.asset('images/valentine_title.png',
               height: 150,),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Stack(
                 alignment: Alignment.topCenter,
                 children: [
@@ -76,6 +75,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                       child: Roulette(
                         controller: _controller,
                         style: const RouletteStyle(
+                          centerStickerColor: Colors.brown,
                           dividerThickness: 4,
                         ),
                       ),
@@ -83,7 +83,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                   ),
                 ],
               ),
-              SizedBox(height: 50),
+              const SizedBox(height: 50),
               ElevatedButton(
                   onPressed: () async {
                     await _controller.rollTo(
@@ -97,11 +97,9 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                          )
                     );
                   } ,
-                  child: Text("受け取ってね！",
+                  child: const Text("受け取ってね！",
                   ),
               ),
-              SizedBox(height: 200),
-              Text('なにがでるかな'),
             ],
           ),
         ),
