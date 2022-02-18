@@ -61,27 +61,18 @@ class _RoulettePageState extends State<RoulettePage> with SingleTickerProviderSt
           child: Column(
             children: [
               const SizedBox(height: 20),
-              Image.asset('images/valentine_title.png',
-              height: 150,),
+              Image.asset('images/valentine_title.png', height: 150,),
               const SizedBox(height: 20),
-              Stack(
-                alignment: Alignment.topCenter,
-                children: [
-                  SizedBox(
-                    width: 260,
-                    height: 260,
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 30),
-                      child: Roulette(
-                        controller: _controller,
-                        style: const RouletteStyle(
-                          centerStickerColor: Colors.brown,
-                          dividerThickness: 4,
-                        ),
-                      ),
-                    ),
+              SizedBox(
+                width: 260,
+                height: 260,
+                child: Roulette(
+                  controller: _controller,
+                  style: const RouletteStyle(
+                    centerStickerColor: Colors.brown,
+                    dividerThickness: 4,
                   ),
-                ],
+                ),
               ),
               const SizedBox(height: 50),
               ElevatedButton(
