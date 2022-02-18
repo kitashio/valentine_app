@@ -17,19 +17,19 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.brown,
       ),
-      home: const HomePage(),
+      home: const RoulettePage(),
     );
   }
 }
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class RoulettePage extends StatefulWidget {
+  const RoulettePage({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<RoulettePage> createState() => _RoulettePageState();
 }
 
-class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
+class _RoulettePageState extends State<RoulettePage> with SingleTickerProviderStateMixin {
   late RouletteController _controller;
   final bool _clockwise = true;
 
@@ -93,7 +93,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
                     );
                      Navigator.push(
                          context,
-                         MaterialPageRoute(builder: (context) => ResultPage(),
+                         MaterialPageRoute(builder: (context) => const ResultPage(),
                          )
                     );
                   } ,
