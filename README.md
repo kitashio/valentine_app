@@ -1,16 +1,13 @@
 # valentine_app
 
-A new Flutter project.
+バレンタインデーチョコのルーレットアプリを作成しました。
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+👇 こちらからぜひ遊んでみてください♡
 
-A few resources to get you started if this is your first Flutter project:
+https://valentineapp-24328.web.app/#/
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+<img src="https://user-images.githubusercontent.com/80618807/171533285-15f2c65a-b042-4f93-a000-48cb08890c6a.PNG" width="250">  <img src="https://user-images.githubusercontent.com/80618807/171533262-ca254b78-c3cb-4868-a952-9cd7a400a65b.PNG" width="250">
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+・使用したパッケージ
+https://pub.dev/packages/roulette
